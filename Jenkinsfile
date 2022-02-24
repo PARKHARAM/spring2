@@ -7,15 +7,7 @@ pipeline {
 
     }
     stages{
-        stage('Preparation') { // for display purposes
-            steps{
-                script{
-                    env.ymd = sh (returnStdout: true, script: ''' echo `date '+%Y%m%d-%H%M%S'` ''')
-                }
-                echo("params : ${env.ymd} " + params.tag)
-            }
-        }
-
+        
         stage('Checkout') {
             steps{
                
