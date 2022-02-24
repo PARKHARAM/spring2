@@ -8,11 +8,10 @@ pipeline {
     }
     stages{
         
-        stage('Checkout') {
-            steps{
-               
-                git branch: 'main', credentialsId: 'gkfka133', url: 'https://github.com/PARKHARAM/spring2.git' 
-            }
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'gkfka133', url: 'https://github.com/PARKHARAM/vmcreate-terraform' 
+         }      
         }
         
         stage('SonarQube analysis') {
